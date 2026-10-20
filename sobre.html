@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre a Apollo · Apollo</title>
+  <meta name="description" content="Conheça a Apollo: empresa brasileira de software que desenvolve produtos de gestão, como o Apollo Drive, e projetos sob medida.">
+  <meta name="theme-color" content="#04050d">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+
+  <div class="nebula" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <svg class="bg-orbits" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g transform="rotate(-18 800 500)"><ellipse cx="800" cy="500" rx="760" ry="240"/><circle r="3" fill="#fbbf24" color="#fbbf24"><animateMotion dur="70s" repeatCount="indefinite" path="M40,500 a760,240 0 1,0 1520,0 a760,240 0 1,0 -1520,0"/></circle></g>
+    <g transform="rotate(14 800 500)"><ellipse class="gold" cx="800" cy="500" rx="560" ry="170"/><circle r="2.5" fill="#c084fc" color="#c084fc"><animateMotion dur="48s" begin="-20s" repeatCount="indefinite" path="M240,500 a560,170 0 1,1 1120,0 a560,170 0 1,1 -1120,0"/></circle></g>
+    <g transform="rotate(-5 800 500)"><ellipse cx="800" cy="500" rx="1000" ry="340"/><circle r="2" fill="#60a5fa" color="#60a5fa"><animateMotion dur="110s" begin="-40s" repeatCount="indefinite" path="M-200,500 a1000,340 0 1,0 2000,0 a1000,340 0 1,0 -2000,0"/></circle></g>
+  </svg>
+  <div class="preloader" aria-hidden="true"><div class="pl-orbit"><div class="pl-ring"></div><img src="assets/img/logo.png" alt=""></div></div>
+  <div class="page-fade" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Apollo, início"><img src="assets/img/logo.png" alt=""><span>Apollo<span class="dot">.</span></span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Início</a>
+        <a href="index.html#apollo-drive">Apollo Drive</a>
+        <a href="planos.html">Planos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html" class="active">Sobre</a>
+      </nav>
+      <div class="header-actions">
+        <button class="kbd-btn" id="cmdk-open" aria-label="Abrir busca rápida"><svg class="i"><use href="#i-search"/></svg><span>Buscar</span> <kbd>Ctrl</kbd><kbd>K</kbd></button>
+        <a href="https://apollo-drive.onrender.com/login" target="_blank" rel="noopener" class="link-login">Área do cliente</a>
+        <a href="#contato" class="btn btn-gold btn-sm">Fale conosco</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu"><svg class="i"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="crumbs reveal"><a href="index.html">Início</a> / <span>Sobre</span></div>
+          <h1 data-split>Construímos os softwares que <span class="grad">gostaríamos de usar</span><span class="dot">.</span></h1>
+          <p class="lede reveal d2">A Apollo é uma empresa brasileira de tecnologia que cria produtos de gestão e soluções sob medida para empresas em crescimento.</p>
+        </div>
+        <div class="ph-orbit reveal d2" aria-hidden="true">
+          <div class="os-glow"></div>
+          <div class="ring" style="inset:18%;--d:22s"><span class="moon" style="top:-3px;left:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)"></span></div>
+          <div class="ring dashed" style="inset:4%;--d:40s;animation-direction:reverse"><span class="moon" style="top:50%;left:-3px"></span></div>
+          <div class="core"><svg class="i"><use href="#i-rocket"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== História e missão ===== -->
+    <!-- TODO: revisar com a história real da Apollo -->
+    <section style="padding-top:0">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow reveal">Nossa história</span>
+          <h2 class="h2" data-split>Da operação real para o <span class="grad">produto</span><span class="dot">.</span></h2>
+          <p class="about-text reveal d1">A Apollo nasceu para resolver problemas que vivemos de perto: dados espalhados em planilhas, processos manuais e decisões tomadas no escuro.</p>
+          <p class="about-text reveal d2">O primeiro resultado é o Apollo Drive, um sistema de gestão comercial completo. Ele é só o começo de um ecossistema de produtos que estamos construindo.</p>
+        </div>
+        <div class="mission-card glass reveal d1">
+          <span class="mini-orbit" aria-hidden="true"></span>
+          <span class="eyebrow">Missão</span>
+          <blockquote style="margin-top:20px">Dar a empresas de todos os tamanhos a <span class="grad-gold">clareza e o controle</span> que antes só as grandes tinham.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Valores ===== -->
+    <section style="padding-top:20px">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Nossos valores</span>
+            <h2 class="h2" data-split>O que nos <span class="grad">move</span><span class="dot">.</span></h2>
+          </div>
+        </div>
+        <div class="values">
+          <div class="value glass reveal"><svg class="i"><use href="#i-spark"/></svg><strong>Inovação constante</strong><span>Produtos que evoluem junto com quem usa, com novas funcionalidades o tempo todo.</span></div>
+          <div class="value glass reveal d1"><svg class="i"><use href="#i-shield"/></svg><strong>Confiança</strong><span>Dados protegidos, transparência e compromisso com o que prometemos.</span></div>
+          <div class="value glass reveal d2"><svg class="i"><use href="#i-users"/></svg><strong>Proximidade</strong><span>Suporte humano, em português, com quem conhece o sistema de verdade.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Depoimentos (oculto até termos depoimentos reais; para ativar, remova este comentário)
+ ===== Depoimentos ===== 
+     TODO: substituir por depoimentos REAIS (nome, cargo, empresa, foto/logo) 
+    <section style="padding-top:40px">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Clientes</span>
+            <h2 class="h2" data-split>Quem usa, <span class="grad">recomenda</span><span class="dot">.</span></h2>
+          </div>
+        </div>
+        <div class="testis">
+          <figure class="testi glass placeholder-note reveal"><blockquote>Espaço para o depoimento de um cliente real: o que mudou na operação depois do Apollo Drive.</blockquote><figcaption class="who"><div class="avatar">AB</div><div>Nome do cliente<small>Cargo · Empresa</small></div></figcaption></figure>
+          <figure class="testi glass placeholder-note reveal d1"><blockquote>Espaço para o depoimento de um cliente real: um resultado concreto (tempo economizado, vendas recuperadas…).</blockquote><figcaption class="who"><div class="avatar">CD</div><div>Nome do cliente<small>Cargo · Empresa</small></div></figcaption></figure>
+          <figure class="testi glass placeholder-note reveal d2"><blockquote>Espaço para o depoimento de um cliente real: como foi a implantação e o suporte.</blockquote><figcaption class="who"><div class="avatar">EF</div><div>Nome do cliente<small>Cargo · Empresa</small></div></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    ===== -->
+
+    <!-- ===== Contato ===== -->
+    <section id="contato" style="padding-top:40px">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Contato</span>
+            <h2 class="h2" data-split>Vamos <span class="grad">conversar</span><span class="dot">?</span></h2>
+          </div>
+          <p class="lede reveal d1">Escolha o canal que preferir. Respondemos em horário comercial.</p>
+        </div>
+        <div class="contact-grid">
+          <!-- TODO: confirmar número oficial de WhatsApp -->
+          <a class="contact-card glass reveal" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Apollo." target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-chat"/></svg></span><strong>WhatsApp</strong><span>+55 11 94937-1451</span></a>
+          <a class="contact-card glass reveal d1" href="https://apollo-drive.onrender.com/login" target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-shield"/></svg></span><strong>Área do cliente</strong><span>Acesse o Apollo Drive</span></a>
+          <a class="contact-card glass reveal d2" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20do%20Apollo%20Drive." target="_blank" rel="noopener"><span class="ic"><svg class="i"><use href="#i-play"/></svg></span><strong>Demonstração</strong><span>Agende uma apresentação do Apollo Drive</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section style="padding-top:40px">
+      <div class="container faq-grid">
+        <div>
+          <span class="eyebrow reveal">Dúvidas</span>
+          <h2 class="h2" data-split>Sobre a <span class="grad">Apollo</span><span class="dot">.</span></h2>
+        </div>
+        <div class="faq">
+          <details class="glass reveal" open><summary>A Apollo tem outros produtos além do Apollo Drive? <svg class="i"><use href="#i-plus"/></svg></summary><p>O Apollo Drive é o nosso primeiro software, e novos produtos estão em desenvolvimento. Também criamos sistemas sob medida.</p></details>
+          <details class="glass reveal"><summary>Meus dados ficam seguros? <svg class="i"><use href="#i-plus"/></svg></summary><p>Cada empresa tem seus dados isolados, com controle de acesso por usuário e perfil de administrador.</p></details>
+          <details class="glass reveal"><summary>Como funciona a implantação? <svg class="i"><use href="#i-plus"/></svg></summary><p>Nosso time configura o sistema com você, importa seus dados e treina a equipe para começar a usar no dia a dia.</p></details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""><span>Apollo<span class="dot">.</span></span></a><p>Softwares de gestão e soluções sob medida para empresas que querem crescer com organização e inteligência.</p></div>
+        <div><h4>Produtos</h4><ul><li><a href="index.html#apollo-drive">Apollo Drive</a></li><li><a href="planos.html">Planos</a></li><li><a href="index.html#produtos">Em breve</a></li></ul></div>
+        <div><h4>Empresa</h4><ul><li><a href="sobre.html">Sobre a Apollo</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="#contato">Contato</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#">Termos de uso</a></li><li><a href="#">Privacidade (LGPD)</a></li></ul></div>
+      </div>
+      <div class="footer-word" aria-hidden="true">Apollo.</div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> Apollo</span><span><a href="index.html?intro" class="replay-intro">Rever introdução</a> · Feito no Brasil.</span></div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Apollo." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg></a>
+
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Busca rápida"><div class="cmdk-box"><div class="cmdk-input"><svg class="i"><use href="#i-search"/></svg><input id="cmdk-input" placeholder="Ir para… planos, serviços, contato" autocomplete="off"><kbd>Esc</kbd></div><ul class="cmdk-list" id="cmdk-list"></ul></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

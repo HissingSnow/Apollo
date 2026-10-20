@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços · Apollo</title>
+  <meta name="description" content="Implantação, migração de dados, personalização, suporte prioritário, relatórios personalizados e projetos sob medida. Serviços Apollo.">
+  <meta name="theme-color" content="#04050d">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+
+  <div class="nebula" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <svg class="bg-orbits" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g transform="rotate(-18 800 500)"><ellipse cx="800" cy="500" rx="760" ry="240"/><circle r="3" fill="#fbbf24" color="#fbbf24"><animateMotion dur="70s" repeatCount="indefinite" path="M40,500 a760,240 0 1,0 1520,0 a760,240 0 1,0 -1520,0"/></circle></g>
+    <g transform="rotate(14 800 500)"><ellipse class="gold" cx="800" cy="500" rx="560" ry="170"/><circle r="2.5" fill="#c084fc" color="#c084fc"><animateMotion dur="48s" begin="-20s" repeatCount="indefinite" path="M240,500 a560,170 0 1,1 1120,0 a560,170 0 1,1 -1120,0"/></circle></g>
+    <g transform="rotate(-5 800 500)"><ellipse cx="800" cy="500" rx="1000" ry="340"/><circle r="2" fill="#60a5fa" color="#60a5fa"><animateMotion dur="110s" begin="-40s" repeatCount="indefinite" path="M-200,500 a1000,340 0 1,0 2000,0 a1000,340 0 1,0 -2000,0"/></circle></g>
+  </svg>
+  <div class="preloader" aria-hidden="true"><div class="pl-orbit"><div class="pl-ring"></div><img src="assets/img/logo.png" alt=""></div></div>
+  <div class="page-fade" aria-hidden="true"></div>
+
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Apollo, início"><img src="assets/img/logo.png" alt=""><span>Apollo<span class="dot">.</span></span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Início</a>
+        <a href="index.html#apollo-drive">Apollo Drive</a>
+        <a href="planos.html">Planos</a>
+        <a href="servicos.html" class="active">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+      <div class="header-actions">
+        <button class="kbd-btn" id="cmdk-open" aria-label="Abrir busca rápida"><svg class="i"><use href="#i-search"/></svg><span>Buscar</span> <kbd>Ctrl</kbd><kbd>K</kbd></button>
+        <a href="https://apollo-drive.onrender.com/login" target="_blank" rel="noopener" class="link-login">Área do cliente</a>
+        <a href="sobre.html#contato" class="btn btn-gold btn-sm">Fale conosco</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu"><svg class="i"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="crumbs reveal"><a href="index.html">Início</a> / <span>Serviços</span></div>
+          <h1 data-split>Personalize o sistema para a <span class="grad">sua realidade</span><span class="dot">.</span></h1>
+          <p class="lede reveal d2">Da implantação ao suporte, nossos serviços acompanham os softwares Apollo para que sua equipe use tudo o que eles podem oferecer.</p>
+        </div>
+        <div class="ph-orbit reveal d2" aria-hidden="true">
+          <div class="os-glow"></div>
+          <div class="ring" style="inset:18%;--d:18s"><span class="moon" style="top:-3px;left:50%;background:var(--gold);box-shadow:0 0 10px var(--gold)"></span></div>
+          <div class="ring dashed" style="inset:4%;--d:32s;animation-direction:reverse"><span class="moon" style="top:50%;left:-3px;background:var(--teal);box-shadow:0 0 10px var(--teal)"></span></div>
+          <div class="core"><svg class="i"><use href="#i-gear"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8 serviços ===== -->
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="services">
+          <div class="svc glass reveal"><span class="n">01</span><div class="ic"><svg class="i"><use href="#i-gear"/></svg></div><h3>Implantação e treinamento</h3><p>Configuramos o sistema com o fluxo da sua empresa e treinamos a equipe para usar desde o primeiro dia.</p><div class="svc-price"><span>a partir de</span><b>R$ 490</b><small>único</small></div></div>
+          <div class="svc glass reveal d1"><span class="n">02</span><div class="ic"><svg class="i"><use href="#i-db"/></svg></div><h3>Migração de planilhas e bancos antigos</h3><p>Trazemos seus clientes, pedidos e histórico de planilhas ou sistemas anteriores.</p><div class="svc-price"><span>a partir de</span><b>R$ 590</b><small>único</small></div></div>
+          <div class="svc glass reveal d2"><span class="n">03</span><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h3>Usuários adicionais</h3><p>Amplie a equipe além do limite do plano sem precisar trocar de plano.</p><div class="svc-price"><span>a partir de</span><b>R$ 79</b><small>por usuário/mês</small></div></div>
+          <div class="svc glass reveal d3"><span class="n">04</span><div class="ic"><svg class="i"><use href="#i-cloud"/></svg></div><h3>Pacotes de armazenamento</h3><p>Mais espaço para documentos, boletos, notas e anexos.</p><div class="svc-price"><span>a partir de</span><b>R$ 49</b><small>/mês · +10 GB</small></div></div>
+          <div class="svc glass reveal"><span class="n">05</span><div class="ic"><svg class="i"><use href="#i-brush"/></svg></div><h3>Personalização visual</h3><p>Cores, logotipo e identidade da sua marca dentro do sistema.</p><div class="svc-price"><span>a partir de</span><b>R$ 390</b><small>único</small></div></div>
+          <div class="svc glass reveal d1"><span class="n">06</span><div class="ic"><svg class="i"><use href="#i-headset"/></svg></div><h3>Suporte prioritário</h3><p>Atendimento com prioridade na fila e prazos de resposta reduzidos.</p><div class="svc-price"><span>a partir de</span><b>R$ 190</b><small>/mês</small></div></div>
+          <div class="svc glass reveal d2"><span class="n">07</span><div class="ic"><svg class="i"><use href="#i-filecheck"/></svg></div><h3>Integração oficial de CNPJ</h3><p>Dados cadastrais de clientes preenchidos automaticamente a partir do CNPJ.</p><div class="svc-price"><span>a partir de</span><b>R$ 49</b><small>/mês</small></div></div>
+          <div class="svc glass reveal d3"><span class="n">08</span><div class="ic"><svg class="i"><use href="#i-chart"/></svg></div><h3>Relatórios personalizados</h3><p>Indicadores e relatórios montados sob medida para a sua gestão.</p><div class="svc-price"><span>a partir de</span><b>R$ 690</b><small>único</small></div></div>
+        </div>
+
+        <!-- Pacotes combinados: discretos, abaixo dos serviços -->
+        <div class="bundles">
+          <div class="bundle glass reveal">
+            <div>
+              <span class="bundle-tag">Pacote Decolagem</span>
+              <p>Implantação Profissional, migração de planilha e personalização visual.</p>
+            </div>
+            <div class="bundle-price"><b>R$ 1.990</b><small>único · <s>R$ 2.470</s></small></div>
+          </div>
+          <div class="bundle glass reveal d1">
+            <div>
+              <span class="bundle-tag">Pacote Órbita completa</span>
+              <p>Implantação Gestão, migração completa e personalização avançada.</p>
+            </div>
+            <div class="bundle-price"><b>R$ 4.990</b><small>único · economia de até R$ 1.980</small></div>
+          </div>
+        </div>
+        <p class="price-disclaimer reveal">Valores de referência. A proposta final é definida depois de um diagnóstico gratuito da sua operação. No plano Enterprise, implantação, migração, suporte prioritário e personalização já fazem parte da proposta.</p>
+      </div>
+    </section>
+
+    <!-- ===== Processo ===== -->
+    <section id="processo" style="padding-top:40px">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Como trabalhamos</span>
+            <h2 class="h2" data-split>Do primeiro contato à <span class="grad">operação rodando</span><span class="dot">.</span></h2>
+          </div>
+          <p class="lede reveal d1">Um processo claro, com acompanhamento em cada etapa.</p>
+        </div>
+        <ol class="timeline">
+          <li class="reveal"><span>01</span><strong>Diagnóstico</strong><p>Entendemos sua operação, seus dados e onde estão os gargalos.</p></li>
+          <li class="reveal d1"><span>02</span><strong>Configuração</strong><p>Ajustamos o sistema ao seu fluxo e migramos suas bases.</p></li>
+          <li class="reveal d2"><span>03</span><strong>Treinamento</strong><p>Capacitamos a equipe para usar desde o primeiro dia.</p></li>
+          <li class="reveal d3"><span>04</span><strong>Evolução</strong><p>Acompanhamento contínuo e novas funcionalidades.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Sob medida ===== -->
+    <section id="sob-medida">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow reveal">Projetos sob medida</span>
+          <h2 class="h2" data-split>Seu negócio é único. <span class="grad-gold">Seu sistema</span> também pode ser<span class="dot">.</span></h2>
+          <p class="about-text reveal d1">Quando nenhum produto pronto resolve, desenvolvemos com você uma solução específica, usando a mesma base tecnológica e o mesmo cuidado de design dos produtos Apollo. Hora técnica a partir de R$ 180.</p>
+          <div class="hero-ctas reveal d2" style="margin-bottom:0">
+            <a href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20um%20projeto%20sob%20medida." target="_blank" rel="noopener" class="btn btn-gold">Conversar sobre um projeto <svg class="i"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="services services-2">
+          <div class="svc glass reveal"><div class="ic"><svg class="i"><use href="#i-code"/></svg></div><h3>Sistemas web</h3><p>Plataformas internas acessíveis de qualquer lugar.</p><div class="svc-price"><span>a partir de</span><b>R$ 15.000</b><small>projeto</small></div></div>
+          <div class="svc glass reveal d1"><div class="ic"><svg class="i"><use href="#i-db"/></svg></div><h3>Integrações</h3><p>Conectamos seus sistemas e planilhas.</p><div class="svc-price"><span>a partir de</span><b>R$ 3.900</b><small>projeto</small></div></div>
+          <div class="svc glass reveal d2"><div class="ic"><svg class="i"><use href="#i-chart"/></svg></div><h3>Painéis e indicadores</h3><p>Dashboards com os números que importam.</p><div class="svc-price"><span>a partir de</span><b>R$ 1.890</b><small>projeto</small></div></div>
+          <div class="svc glass reveal d3"><div class="ic"><svg class="i"><use href="#i-bot"/></svg></div><h3>Automações</h3><p>Menos tarefas manuais, mais tempo para vender.</p><div class="svc-price"><span>a partir de</span><b>R$ 1.290</b><small>projeto</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:20px">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="orbit" aria-hidden="true"></div><div class="orbit o2" aria-hidden="true"></div>
+          <span class="eyebrow">Monte sua solução</span>
+          <h2 data-split>Monte a solução ideal para <span class="grad">sua operação</span><span class="dot">.</span></h2>
+          <p>Conte o que sua empresa precisa e montamos uma proposta com o plano e os serviços certos.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20uma%20proposta%20de%20servi%C3%A7os%20Apollo.">Pedir proposta <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="planos.html">Ver planos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""><span>Apollo<span class="dot">.</span></span></a><p>Softwares de gestão e soluções sob medida para empresas que querem crescer com organização e inteligência.</p></div>
+        <div><h4>Produtos</h4><ul><li><a href="index.html#apollo-drive">Apollo Drive</a></li><li><a href="planos.html">Planos</a></li><li><a href="index.html#produtos">Em breve</a></li></ul></div>
+        <div><h4>Empresa</h4><ul><li><a href="sobre.html">Sobre a Apollo</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="sobre.html#contato">Contato</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#">Termos de uso</a></li><li><a href="#">Privacidade (LGPD)</a></li></ul></div>
+      </div>
+      <div class="footer-word" aria-hidden="true">Apollo.</div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> Apollo</span><span><a href="index.html?intro" class="replay-intro">Rever introdução</a> · Feito no Brasil.</span></div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Apollo." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg></a>
+
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Busca rápida"><div class="cmdk-box"><div class="cmdk-input"><svg class="i"><use href="#i-search"/></svg><input id="cmdk-input" placeholder="Ir para… planos, serviços, contato" autocomplete="off"><kbd>Esc</kbd></div><ul class="cmdk-list" id="cmdk-list"></ul></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apollo · Software e tecnologia para empresas</title>
+  <meta name="description" content="A Apollo desenvolve softwares de gestão e soluções sob medida para empresas. Conheça o Apollo Drive, sistema de gestão comercial na nuvem.">
+  <meta name="theme-color" content="#04050d">
+  <meta property="og:title" content="Apollo · Software e tecnologia para empresas">
+  <meta property="og:description" content="Softwares que colocam sua operação em órbita. Conheça o Apollo Drive.">
+  <meta property="og:image" content="assets/img/dashboard.webp">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Intro 3D: uma vez por sessão (force com ?intro na URL); pulada para quem prefere menos movimento -->
+  <script>
+    try {
+      var forceIntro = /[?&]intro\b/.test(location.search);
+      var seenIntro = sessionStorage.getItem('apolloIntro');
+      var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ((forceIntro || !seenIntro) && !calm && !location.hash) document.documentElement.classList.add('intro-on');
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <script src="assets/js/icons.js"></script>
+
+  <!-- ===== Introdução 3D ===== -->
+  <div class="intro" id="intro" role="dialog" aria-label="Introdução Apollo">
+    <canvas aria-hidden="true"></canvas>
+    <div class="intro-vignette" aria-hidden="true"></div>
+    <p class="intro-line" data-start="0.9" data-end="3.5"><small>No início, uma faísca</small>Infinitas <span class="grad">oportunidades</span><span class="dot">.</span></p>
+    <p class="intro-line" data-start="3.9" data-end="6.3"><small>Bilhões de caminhos</small>Um universo de <span class="grad">escolhas</span><span class="dot">.</span></p>
+    <p class="intro-line" data-start="6.7" data-end="8.9"><small>Galáxias de ideias</small>Cada estrela, uma nova <span class="grad">possibilidade</span><span class="dot">.</span></p>
+    <p class="intro-line" data-start="9.2" data-end="11.6"><small>Até que tudo se alinha</small>E você encontra a sua <span class="grad-gold">constelação</span><span class="dot">.</span></p>
+    <div class="intro-final" aria-hidden="true">
+      <img src="assets/img/logo.png" alt="">
+      <h2>Apollo<span class="dot">.</span></h2>
+      <p>Tecnologia que coloca sua empresa em órbita.</p>
+    </div>
+    <span class="intro-brand">Apollo · Explorando o universo</span>
+    <button class="intro-skip" type="button">Pular introdução <kbd>Esc</kbd></button>
+    <div class="intro-progress" aria-hidden="true"><i></i></div>
+  </div>
+
+  <!-- ===== Fundo: nebulosa, estrelas e órbitas ===== -->
+  <div class="nebula" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <svg class="bg-orbits" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g transform="rotate(-18 800 500)">
+      <ellipse cx="800" cy="500" rx="760" ry="240"/>
+      <circle r="3" fill="#fbbf24" color="#fbbf24"><animateMotion dur="70s" repeatCount="indefinite" path="M40,500 a760,240 0 1,0 1520,0 a760,240 0 1,0 -1520,0"/></circle>
+    </g>
+    <g transform="rotate(14 800 500)">
+      <ellipse class="gold" cx="800" cy="500" rx="560" ry="170"/>
+      <circle r="2.5" fill="#c084fc" color="#c084fc"><animateMotion dur="48s" begin="-20s" repeatCount="indefinite" path="M240,500 a560,170 0 1,1 1120,0 a560,170 0 1,1 -1120,0"/></circle>
+    </g>
+    <g transform="rotate(-5 800 500)">
+      <ellipse cx="800" cy="500" rx="1000" ry="340"/>
+      <circle r="2" fill="#60a5fa" color="#60a5fa"><animateMotion dur="110s" begin="-40s" repeatCount="indefinite" path="M-200,500 a1000,340 0 1,0 2000,0 a1000,340 0 1,0 -2000,0"/></circle>
+    </g>
+  </svg>
+
+  <div class="preloader" aria-hidden="true"><div class="pl-orbit"><div class="pl-ring"></div><img src="assets/img/logo.png" alt=""></div></div>
+  <div class="page-fade" aria-hidden="true"></div>
+
+  <!-- ===== Header ===== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Apollo, início">
+        <img src="assets/img/logo.png" alt="">
+        <span>Apollo<span class="dot">.</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Início</a>
+        <a href="index.html#apollo-drive">Apollo Drive</a>
+        <a href="planos.html">Planos</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+      </nav>
+      <div class="header-actions">
+        <button class="kbd-btn" id="cmdk-open" aria-label="Abrir busca rápida">
+          <svg class="i"><use href="#i-search"/></svg><span>Buscar</span> <kbd>Ctrl</kbd><kbd>K</kbd>
+        </button>
+                <a href="https://apollo-drive.onrender.com/login" target="_blank" rel="noopener" class="link-login">Área do cliente</a>
+        <a href="sobre.html#contato" class="btn btn-gold btn-sm">Fale conosco</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu"><svg class="i"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div style="position:relative;z-index:2">
+          <a href="#apollo-drive" class="badge reveal"><b>LANÇAMENTO</b> Conheça o Apollo Drive <svg class="i"><use href="#i-arrow"/></svg></a>
+          <h1 data-split>Tecnologia que coloca sua empresa <span class="grad">em órbita</span><span class="dot">.</span></h1>
+          <p class="lead reveal d2">A Apollo desenvolve softwares de gestão e soluções sob medida para empresas que querem crescer com organização, dados e inteligência.</p>
+          <div class="hero-ctas reveal d3">
+            <a href="#produtos" class="btn btn-gold">Conheça nossos produtos <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="sobre.html#contato" class="btn btn-ghost">Fale com a Apollo</a>
+          </div>
+          <div class="hero-proof reveal d4">
+            <span><svg class="i"><use href="#i-check"/></svg> Software próprio, feito no Brasil</span>
+            <span><svg class="i"><use href="#i-check"/></svg> Implantação assistida</span>
+            <span><svg class="i"><use href="#i-check"/></svg> Suporte em português</span>
+          </div>
+        </div>
+
+        <!-- Sistema orbital: a Apollo no centro, produtos e serviços orbitando -->
+        <div class="orbit-system reveal d2" aria-label="Ecossistema Apollo">
+          <div class="os-glow"></div>
+          <div class="ring r1"><span class="moon" style="top:-3px;left:50%"></span></div>
+          <div class="ring r2">
+            <div class="planet"><a href="#apollo-drive" class="planet-inner"><span class="sphere p-drive"></span><span class="planet-label">Apollo Drive<small>Disponível</small></span></a></div>
+          </div>
+          <div class="ring r3 dashed">
+            <div class="planet left"><a href="#produtos" class="planet-inner"><span class="sphere p-next"></span><span class="planet-label">Próximo produto<small>Em desenvolvimento</small></span></a></div>
+            <div class="planet right"><a href="servicos.html#sob-medida" class="planet-inner"><span class="sphere p-custom"></span><span class="planet-label">Sob medida<small>Projetos exclusivos</small></span></a></div>
+          </div>
+          <div class="ring r4">
+            <div class="planet bottom"><a href="servicos.html" class="planet-inner"><span class="sphere p-svc"></span><span class="planet-label">Serviços<small>Implantação e suporte</small></span></a></div>
+            <span class="moon" style="top:50%;left:-3px;background:var(--gold);box-shadow:0 0 10px var(--gold)"></span>
+          </div>
+          <div class="sun"><img src="assets/img/logo.png" alt="Apollo"></div>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><i></i>Role</div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track"><span>Gestão comercial</span><span>Funil Kanban</span><span>Dashboards</span><span>Mapa de regiões</span><span>Pedidos B2B</span><span>Financeiro</span><span>Estoque</span><span>Assistente inteligente</span></div>
+      <div class="marquee-track"><span>Gestão comercial</span><span>Funil Kanban</span><span>Dashboards</span><span>Mapa de regiões</span><span>Pedidos B2B</span><span>Financeiro</span><span>Estoque</span><span>Assistente inteligente</span></div>
+    </div>
+
+    <!-- ===== PRODUTOS ===== -->
+    <section id="produtos">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Ecossistema Apollo</span>
+            <h2 class="h2" data-split>Nossos <span class="grad">produtos</span><span class="dot">.</span></h2>
+          </div>
+          <p class="lede reveal d1">Softwares que se conectam para cobrir cada parte da sua operação. O Apollo Drive é o primeiro, e outros já estão em desenvolvimento.</p>
+        </div>
+
+        <div class="products">
+          <article class="product product-main glass reveal">
+            <div class="product-top">
+              <div>
+                <span class="status-pill live"><span class="live-dot"></span> Disponível</span>
+                <h3>Apollo Drive<span class="dot">.</span></h3>
+                <p class="product-sub">Gestão comercial inteligente</p>
+                <p class="product-desc">Clientes, pedidos, funil de vendas, agenda, regiões, estoque e financeiro integrados em um só sistema na nuvem.</p>
+              </div>
+              <ul class="product-feats">
+                <li><svg class="i"><use href="#i-check"/></svg> Funil Kanban e agenda</li>
+                <li><svg class="i"><use href="#i-check"/></svg> Dashboard, metas e projeções</li>
+                <li><svg class="i"><use href="#i-check"/></svg> Mapa 3D de regiões</li>
+                <li><svg class="i"><use href="#i-check"/></svg> Financeiro e estoque</li>
+                <li style="margin-top:10px"><a href="#apollo-drive" class="btn btn-gold btn-sm">Conhecer o Apollo Drive <svg class="i"><use href="#i-arrow"/></svg></a></li>
+              </ul>
+            </div>
+            <div class="product-shot">
+              <img src="assets/img/dashboard.webp" alt="Painel inicial do Apollo Drive" loading="lazy">
+            </div>
+          </article>
+
+          <!-- TODO: quando os próximos produtos tiverem nome, trocar estes cards -->
+          <article class="product product-soon glass reveal d1">
+            <span class="mini-orbit" aria-hidden="true"></span>
+            <span class="status-pill">Em desenvolvimento</span>
+            <div class="soon-ic"><svg class="i"><use href="#i-rocket"/></svg></div>
+            <h3>Próximo produto Apollo</h3>
+            <p>Um novo software para outra área da sua empresa está em construção.</p>
+            <a href="sobre.html#contato" class="soon-link">Quero ser avisado <svg class="i"><use href="#i-arrow"/></svg></a>
+          </article>
+
+          <article class="product product-soon glass reveal d2">
+            <span class="mini-orbit" aria-hidden="true"></span>
+            <span class="status-pill gold">Sob medida</span>
+            <div class="soon-ic gold"><svg class="i"><use href="#i-code"/></svg></div>
+            <h3>Projetos sob medida</h3>
+            <p>Precisa de um sistema específico para o seu negócio? Desenvolvemos com você.</p>
+            <a href="servicos.html#sob-medida" class="soon-link">Conversar sobre um projeto <svg class="i"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APOLLO DRIVE ===== -->
+    <section id="apollo-drive">
+      <div class="container drive-split">
+        <div>
+          <span class="eyebrow reveal">Produto em destaque</span>
+          <h2 class="h2" data-split>Apollo Drive<span class="dot">.</span> Sua operação comercial em <span class="grad">uma só órbita</span>.</h2>
+          <ul class="drive-points">
+            <li class="reveal"><span class="ic"><svg class="i"><use href="#i-bell"/></svg></span><div><b>Nada fica para trás</b>Alertas de retornos atrasados e clientes sem contato.</div></li>
+            <li class="reveal d1"><span class="ic"><svg class="i"><use href="#i-chart"/></svg></span><div><b>Decisão com dados</b>Vendas x meta, faturamento e projeções em tempo real.</div></li>
+            <li class="reveal d2"><span class="ic"><svg class="i"><use href="#i-sheet"/></svg></span><div><b>Adeus, planilhas</b>Importe suas bases e centralize tudo num só lugar.</div></li>
+          </ul>
+          <div class="hero-ctas reveal d3" style="margin:0">
+            <a href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Apollo%20Drive." target="_blank" rel="noopener" class="btn btn-gold">Agendar demonstração <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a href="planos.html" class="btn btn-ghost">Ver planos</a>
+          </div>
+        </div>
+        <div class="screen-wrap reveal d2">
+          <div class="screen">
+            <div class="screen-bar"><i></i><i></i><i></i><span class="screen-label">APOLLO DRIVE</span></div>
+            <img src="assets/img/dashboard.webp" alt="Tela inicial do Apollo Drive com indicadores, gráfico de vendas e alertas críticos" width="1920" height="982">
+          </div>
+          <div class="float float-1">
+            <div class="ic"><svg class="i"><use href="#i-bell"/></svg></div>
+            <div><strong>Nova oportunidade</strong><small>há 2 minutos</small></div>
+          </div>
+          <div class="float float-2">
+            <div class="ic"><svg class="i"><use href="#i-chart"/></svg></div>
+            <div><strong>Venda realizada!</strong><small>Pedido aprovado · há 5 min</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MÓDULOS (rolagem horizontal) ===== -->
+    <section class="hscroll" id="modulos">
+      <div class="hscroll-sticky">
+        <div class="container hscroll-head">
+          <div>
+            <span class="eyebrow">Módulos do Apollo Drive</span>
+            <h2 class="h2" data-split>Tudo que sua equipe <span class="grad">precisa</span><span class="dot">.</span></h2>
+          </div>
+          <div class="hscroll-progress" aria-hidden="true"><i></i></div>
+        </div>
+        <div class="hscroll-track">
+          <article class="hcard glass wide">
+            <span class="num">01</span>
+            <div class="ic"><svg class="i"><use href="#i-kanban"/></svg></div>
+            <h3>Funil Kanban</h3>
+            <p>Arraste clientes entre etapas: novo lead, contato, visita, proposta e negociação.</p>
+            <div class="viz mini-kanban" aria-hidden="true">
+              <div class="col"><span>Leads <b>24</b></span><div class="kc"></div><div class="kc" style="--c:var(--blue);--kd:1s"></div><div class="kc" style="--kd:2s"></div></div>
+              <div class="col"><span>Proposta <b>16</b></span><div class="kc" style="--c:var(--gold);--kd:.5s"></div><div class="kc" style="--c:var(--blue);--kd:3s"></div></div>
+              <div class="col"><span>Fechados <b>8</b></span><div class="kc" style="--c:var(--green)"></div><div class="kc" style="--c:var(--green);--kd:1.5s"></div><div class="kc" style="--c:var(--green);--kd:4s"></div></div>
+            </div>
+          </article>
+          <article class="hcard glass">
+            <span class="num">02</span>
+            <div class="ic blue"><svg class="i"><use href="#i-chart"/></svg></div>
+            <h3>Dashboard de vendas</h3>
+            <p>Faturamento, ticket médio e meta por mês, filtrados por marca e coleção.</p>
+            <div class="viz mini-bars" aria-hidden="true"><i style="--h:62%"></i><i style="--h:78%"></i><i style="--h:55%"></i><i style="--h:50%"></i><i style="--h:80%"></i><i style="--h:48%"></i><i style="--h:92%"></i><i style="--h:60%"></i><i style="--h:95%"></i></div>
+          </article>
+          <article class="hcard glass">
+            <span class="num">03</span>
+            <div class="ic gold"><svg class="i"><use href="#i-globe"/></svg></div>
+            <h3>Mapa e regiões</h3>
+            <p>Globo interativo com clientes, pedidos e marcas por estado e município.</p>
+            <div class="viz mini-globe" aria-hidden="true"><i style="top:40%;left:55%"></i><i style="top:55%;left:62%;animation-delay:.5s"></i><i style="top:62%;left:50%;animation-delay:1s"></i><i style="top:35%;left:40%;animation-delay:1.5s"></i></div>
+          </article>
+          <article class="hcard glass">
+            <span class="num">04</span>
+            <div class="ic"><svg class="i"><use href="#i-bot"/></svg></div>
+            <h3>Assistente Apollo</h3>
+            <p>Sugestões automáticas do que priorizar no seu dia.</p>
+            <div class="viz mini-chat" aria-hidden="true"><div class="ai">Você tem retornos atrasados. Quer uma lista de prioridades?</div><div class="me">Sim, por faturamento.</div></div>
+          </article>
+          <article class="hcard glass">
+            <span class="num">05</span>
+            <div class="ic blue"><svg class="i"><use href="#i-cart"/></svg></div>
+            <h3>Pedidos e B2B</h3>
+            <p>Pedidos por situação, faturamento parcial e portal para o cliente comprar sozinho.</p>
+            <svg class="i big-ic" aria-hidden="true"><use href="#i-cart"/></svg>
+          </article>
+          <article class="hcard glass">
+            <span class="num">06</span>
+            <div class="ic gold"><svg class="i"><use href="#i-calendar"/></svg></div>
+            <h3>Agenda comercial</h3>
+            <p>Visitas, ligações e retornos organizados com lembretes.</p>
+            <svg class="i big-ic" aria-hidden="true"><use href="#i-calendar"/></svg>
+          </article>
+          <article class="hcard glass">
+            <span class="num">07</span>
+            <div class="ic"><svg class="i"><use href="#i-trophy"/></svg></div>
+            <h3>Produtividade e comissões</h3>
+            <p>Desempenho por representante e comissões calculadas automaticamente.</p>
+            <svg class="i big-ic" aria-hidden="true"><use href="#i-trophy"/></svg>
+          </article>
+          <article class="hcard glass">
+            <span class="num">08</span>
+            <div class="ic blue"><svg class="i"><use href="#i-wallet"/></svg></div>
+            <h3>Financeiro</h3>
+            <p>Contas a pagar, boletos e notas fiscais com status de vencimento.</p>
+            <svg class="i big-ic" aria-hidden="true"><use href="#i-wallet"/></svg>
+          </article>
+          <article class="hcard glass">
+            <span class="num">09</span>
+            <div class="ic gold"><svg class="i"><use href="#i-box"/></svg></div>
+            <h3>Estoque e catálogos</h3>
+            <p>Saldo por produto e catálogos digitais por marca e coleção.</p>
+            <svg class="i big-ic" aria-hidden="true"><use href="#i-box"/></svg>
+          </article>
+          <article class="hcard glass cta-card">
+            <span class="eyebrow">E muito mais</span>
+            <h3 style="margin-top:14px">Veja qual plano combina com você<span class="dot">.</span></h3>
+            <a href="planos.html" class="btn btn-gold">Ver planos <svg class="i"><use href="#i-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TOUR ===== -->
+    <section id="tour">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Tour pelo sistema</span>
+            <h2 class="h2" data-split>Veja o Apollo Drive <span class="grad">em ação</span><span class="dot">.</span></h2>
+          </div>
+          <p class="lede reveal d1">Telas pensadas para o dia a dia de quem vende e de quem gerencia.</p>
+        </div>
+
+        <div class="tour reveal">
+          <div class="tour-tabs" role="tablist">
+            <button class="tour-tab active" role="tab" data-pane="p-dash"><h4><svg class="i"><use href="#i-chart"/></svg> Visão geral</h4><p>Indicadores, alertas críticos e desempenho de vendas assim que você entra.</p><span class="bar"></span></button>
+            <!-- <button class="tour-tab" role="tab" data-pane="p-pedidos"><h4><svg class="i"><use href="#i-cart"/></svg> Pedidos e faturamento</h4><p>Pedidos por situação, meta x venda e projeção de faturamento.</p><span class="bar"></span></button> -->
+            <!-- <button class="tour-tab" role="tab" data-pane="p-mapa"><h4><svg class="i"><use href="#i-spark"/></svg> Mapa da operação</h4><p>Navegue pelas ferramentas como constelações de um universo.</p><span class="bar"></span></button> -->
+            <!-- <button class="tour-tab" role="tab" data-pane="p-regioes"><h4><svg class="i"><use href="#i-globe"/></svg> Regiões de atendimento</h4><p>Globo 3D com clientes, pedidos e marcas atendidas em cada estado.</p><span class="bar"></span></button> -->
+            <button class="tour-tab" role="tab" data-pane="p-funil"><h4><svg class="i"><use href="#i-kanban"/></svg> Funil de vendas</h4><p>Cada negócio numa etapa, com valor e responsável visíveis.</p><span class="bar"></span></button>
+            <button class="tour-tab" role="tab" data-pane="p-ai"><h4><svg class="i"><use href="#i-bot"/></svg> Assistente Apollo</h4><p>Sugestões automáticas para focar no que gera venda.</p><span class="bar"></span></button>
+          </div>
+
+          <div class="tour-stage glass">
+            <div class="tour-pane active" id="p-dash"><img src="assets/img/dashboard.webp" alt="Visão geral do Apollo Drive" loading="lazy"></div>
+            <!-- <div class="tour-pane" id="p-pedidos"><img src="assets/img/drive-pedidos.webp" alt="Visão geral dos pedidos no Apollo Drive" loading="lazy" data-fallback="assets/img/dashboard.webp"></div> -->
+            <!-- <div class="tour-pane" id="p-mapa"><img src="assets/img/drive-mapa.webp" alt="Mapa da operação do Apollo Drive" loading="lazy" data-fallback="assets/img/dashboard.webp"></div> -->
+            <!-- <div class="tour-pane" id="p-regioes"><img src="assets/img/drive-regioes.webp" alt="Globo com as regiões de atendimento" loading="lazy" data-fallback="assets/img/dashboard.webp"></div> -->
+            <!-- Funil e Assistente: dados fictícios (os prints reais têm nomes de clientes) -->
+            <div class="tour-pane" id="p-funil">
+              <div class="app-mock">
+                <div class="top"><h5>Funil de vendas</h5><span class="pill">48 negócios</span></div>
+                <div class="kanban">
+                  <div class="col"><span>Novo lead <b>24</b></span><div class="card">Distribuidora Norte<small>São Paulo · SP</small></div><div class="card" style="--c:var(--blue)">Loja Centro<small>Campinas · SP</small></div><div class="card">Rede Sul<small>Curitiba · PR</small></div></div>
+                  <div class="col"><span>Visita agendada <b>11</b></span><div class="card" style="--c:var(--gold)">Mercado Bom Preço<small>Santos · SP</small></div><div class="card" style="--c:var(--gold)">Atacado Leste<small>Guarulhos · SP</small></div></div>
+                  <div class="col"><span>Proposta <b>5</b></span><div class="card" style="--c:var(--blue)">Grupo Vale<small>Belo Horizonte · MG</small></div></div>
+                  <div class="col"><span>Negociação <b>8</b></span><div class="card" style="--c:var(--green)">Comercial Alfa<small>Salvador · BA</small></div><div class="card" style="--c:var(--green)">Casa e Lar<small>Recife · PE</small></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="tour-pane" id="p-ai">
+              <div class="app-mock">
+                <div class="top"><h5>Assistente Apollo</h5><span class="pill">Online</span></div>
+                <div class="chat">
+                  <div class="msg ai">Bom dia! Você tem <b>retornos atrasados</b> e clientes sem contato há mais de 30 dias. Quer que eu monte sua lista de prioridades?</div>
+                  <div class="msg me">Sim, começa pelos maiores clientes.</div>
+                  <div class="msg ai">Pronto. Separei os <b>10 clientes</b> com maior faturamento e retorno pendente e adicionei os contatos na sua agenda de hoje.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLANOS (resumo) ===== -->
+    <section style="padding-top:40px">
+      <div class="container">
+        <div class="split-head">
+          <div>
+            <span class="eyebrow reveal">Planos Apollo Drive</span>
+            <h2 class="h2" data-split>Um plano para cada <span class="grad">fase</span><span class="dot">.</span></h2>
+          </div>
+          <div class="reveal d1" style="justify-self:end"><a href="planos.html" class="btn btn-ghost">Comparar todos os planos <svg class="i"><use href="#i-arrow"/></svg></a></div>
+        </div>
+        <div class="plans-teaser glass reveal">
+          <a href="planos.html" class="pt-item"><h3>Essencial</h3><strong>R$ 349</strong><span>/mês · até 3 usuários</span></a>
+          <a href="planos.html" class="pt-item feat"><h3>Profissional ★</h3><strong>R$ 1.290</strong><span>/mês · até 10 usuários</span></a>
+          <a href="planos.html" class="pt-item"><h3>Gestão</h3><strong>R$ 2.199</strong><span>/mês · até 30 usuários</span></a>
+          <a href="planos.html" class="pt-item"><h3>Enterprise</h3><strong>Sob consulta</strong><span>sob medida</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="padding-top:20px">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="orbit o2" aria-hidden="true"></div>
+          <span class="eyebrow">Vamos conversar</span>
+          <h2 data-split>Pronto para colocar sua empresa <span class="grad">em órbita</span><span class="dot">?</span></h2>
+          <p>Agende uma demonstração do Apollo Drive ou conte para a gente o que sua operação precisa.</p>
+          <div class="hero-ctas">
+            <!-- TODO: confirmar número oficial de WhatsApp -->
+            <a class="btn btn-gold" target="_blank" rel="noopener" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20o%20Apollo%20Drive.">Agendar pelo WhatsApp <svg class="i"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="sobre.html#contato">Outros contatos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""><span>Apollo<span class="dot">.</span></span></a>
+          <p>Softwares de gestão e soluções sob medida para empresas que querem crescer com organização e inteligência.</p>
+        </div>
+        <div><h4>Produtos</h4><ul><li><a href="index.html#apollo-drive">Apollo Drive</a></li><li><a href="planos.html">Planos</a></li><li><a href="index.html#produtos">Em breve</a></li></ul></div>
+        <div><h4>Empresa</h4><ul><li><a href="sobre.html">Sobre a Apollo</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="sobre.html#contato">Contato</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#">Termos de uso</a></li><li><a href="#">Privacidade (LGPD)</a></li></ul></div>
+      </div>
+      <div class="footer-word" aria-hidden="true">Apollo.</div>
+      <div class="footer-bottom">
+        <!-- TODO: razão social e CNPJ -->
+        <span>© <span id="year">2026</span> Apollo</span>
+        <span><a href="index.html?intro" class="replay-intro">Rever introdução</a> · Feito no Brasil.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa" href="https://wa.me/5511949371451?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Apollo." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
+  </a>
+
+  <div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Busca rápida">
+    <div class="cmdk-box">
+      <div class="cmdk-input"><svg class="i"><use href="#i-search"/></svg><input id="cmdk-input" placeholder="Ir para… planos, serviços, contato" autocomplete="off"><kbd>Esc</kbd></div>
+      <ul class="cmdk-list" id="cmdk-list"></ul>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/intro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
