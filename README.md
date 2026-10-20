@@ -1,7 +1,8 @@
-# Apollo · site institucional
+# Apollo · site institucional + Área do Cliente
 
-Site da Apollo (apollocompany.netlify.app): home com introdução 3D, Apollo Drive, planos, serviços e sobre.
+Site da Apollo (apollocompany.netlify.app): home com introdução 3D, Apollo Drive, planos, serviços, sobre e **Área do Cliente** (conta, escolha de plano, cadastro da empresa e pagamento por cartão).
 
-- HTML, CSS e JS puros, sem build. Basta publicar a raiz do repositório.
-- Netlify: cada `push` na branch `main` publica o site automaticamente (após ligar o repositório no painel da Netlify).
-- O template anterior (Gp, 2024) continua no histórico do Git.
+- Páginas: HTML/CSS/JS puros. O build da Netlify só copia `*.html` e `assets/` para `dist/`.
+- Funções (`netlify/functions`): pagamento com Stripe, contas com Supabase e criação automática da empresa no Apollo Drive.
+- Configuração passo a passo: `AREA_CLIENTE_SETUP.md`. Banco: `supabase/schema.sql`.
+- Pré-visualização das telas sem contas reais: `/area-cliente.html?demo=1`.

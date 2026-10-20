@@ -171,7 +171,8 @@
       { label: 'Serviços', href: 'servicos.html', hint: 'Página' },
       { label: 'Projetos sob medida', href: 'servicos.html#sob-medida', hint: 'Serviços' },
       { label: 'Sobre a Apollo', href: 'sobre.html', hint: 'Página' },
-      { label: 'Contato', href: 'sobre.html#contato', hint: 'Sobre' }
+      { label: 'Contato', href: 'sobre.html#contato', hint: 'Sobre' },
+      { label: 'Área do cliente', href: 'area-cliente.html', hint: 'Conta' }
     ];
     let sel = 0, filtered = commands;
     const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');

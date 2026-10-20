@@ -1,3 +1,15 @@
-# Site estático: a raiz do repositório é publicada como está
+# Páginas estáticas vão para "dist"; as funções da Área do Cliente ficam em netlify/functions.
 [build]
-  publish = "."
+  command = "rm -rf dist && mkdir dist && cp -r *.html assets dist/"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Área do Cliente nunca vai para cache de buscadores
+[[headers]]
+  for = "/area-cliente.html"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Cache-Control = "no-store"
