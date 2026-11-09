@@ -164,6 +164,7 @@
       { label: 'Início', href: 'index.html', hint: 'Página' },
       { label: 'Nossos produtos', href: 'index.html#produtos', hint: 'Início' },
       { label: 'Apollo Drive', href: 'index.html#apollo-drive', hint: 'Produto' },
+      { label: 'Para quem é o Apollo Drive', href: 'index.html#para-quem', hint: 'Produto' },
       { label: 'Módulos do Apollo Drive', href: 'index.html#modulos', hint: 'Produto' },
       { label: 'Tour pelo sistema', href: 'index.html#tour', hint: 'Produto' },
       { label: 'Planos e preços', href: 'planos.html', hint: 'Página' },

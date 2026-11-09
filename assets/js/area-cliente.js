@@ -502,6 +502,7 @@
   init().catch((err) => {
     console.error("[Área do cliente]", err);
     show("ac-auth");
-    msg($("#ac-auth-msg"), "Não foi possível carregar a Área do Cliente. Atualize a página.");
+    msg($("#ac-auth-msg"), "A Área do Cliente está em ajuste. Para contratar ou tirar dúvidas, fale com a gente pelo WhatsApp.", "warn");
+    $$("#ac-auth input, #ac-auth button").forEach((el) => (el.disabled = true));
   });
 })();

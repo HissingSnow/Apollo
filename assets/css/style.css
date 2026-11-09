@@ -695,3 +695,22 @@ a.planet-inner:hover .planet-label { border-color: var(--gold); background: rgba
   .js .reveal { opacity: 1; transform: none; }
   [data-split] .w > span { transform: none; }
 }
+
+/* ================= Para quem é (blocos por público) + nota sobre NF ================= */
+.drive-note { display: flex; gap: 10px; align-items: flex-start; margin: -12px 0 30px; font-size: 14px; color: var(--muted); }
+.drive-note svg { flex-shrink: 0; margin-top: 2px; color: #c4b5fd; }
+.audience { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.aud { display: flex; flex-direction: column; padding: 34px 30px; transition: border-color .3s, box-shadow .3s; }
+.aud:hover { border-color: rgba(251, 191, 36, .45); box-shadow: 0 18px 40px -20px rgba(251, 191, 36, .35); }
+.aud-tag { font-size: 11.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: #c4b5fd; }
+.aud h3 { font-size: 22px; line-height: 1.3; margin: 14px 0 12px; }
+.aud p { color: var(--muted); font-size: 15px; }
+.aud ul { list-style: none; padding: 0; margin: 22px 0 28px; display: grid; gap: 10px; font-size: 15px; }
+.aud li { display: flex; gap: 10px; align-items: center; }
+.aud li svg { color: var(--green); flex-shrink: 0; }
+.aud .btn { margin-top: auto; align-self: flex-start; white-space: normal; }
+@media (max-width: 680px) {
+  .audience { grid-template-columns: 1fr; }
+  .aud { padding: 28px 22px; }
+  .aud h3 { font-size: 19px; }
+}
